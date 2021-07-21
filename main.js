@@ -1,19 +1,25 @@
-var button = document.getElementById=("submit")[0];
+var button = document.getElementById('submit')
 
 button.addEventListener('click', function (){
+  
+  var nameInput = document.getElementById("name").value;
+  var messageInput = document.getElementById("message").value;
 
-  var nameInput = document.getElementById("name")[0].value;
-  var newName = document.createElement("newName");
-  var nameInputElement = document.createTextNode(nameInput);
+  var postsDiv = document.querySelector('.post');
+  var newPosts = document.createElement('div');
 
-  var messageInput = document.getElementById("message")[0].value;
-  var newMessage = document.createElement(newMessage);
+  
+  var newPostName = document.createElement('p');
+  var nameInputElement = document.createTextNode('Posted by: ' + nameInput);
+  newPostName.appendChild(nameInputElement);
+
+  
+  var newPostMessage = document.createElement('p');
   var messageInputElement = document.createTextNode(messageInput);
+  newPostMessage.appendChild(messageInputElement);
 
-  newName.appendChild(nameInput);
-  newMessage.appendChild(messageInput);
-
-  document.getElementsByClassName("submissionName",)[0].append(newName);
-  document.getElementsByClassName("submissionMessage",)[0].append(newMessage);
+  newPosts.append(newPostName);
+  newPosts.append(newPostMessage);
 
 });
+
